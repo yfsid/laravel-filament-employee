@@ -5,7 +5,8 @@
 ## History
 
 1. Boilerplate
-    - Install laravel `Laravel v9.24.0` on `PHP v8.1.9`
+    - Install `Laravel v9.24.0` on `PHP v8.1.9`.
+    - Install `breeze`
 
 ## License
 
