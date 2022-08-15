@@ -4,11 +4,16 @@
 
 ## History
 
-1. Boilerplate
+### Boilerplate
+
     - Install `Laravel v9.24.0` on `PHP v8.1.9`.
     - Install `breeze`.
     - Install `Laravel Debugbar`.
     - Install `Filament Admin v2`
+
+### Feature
+
+1. Set `timezone` using key in `.env` file
 
 ## License
 
