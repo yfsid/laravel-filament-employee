@@ -6,7 +6,8 @@
 
 1. Boilerplate
     - Install `Laravel v9.24.0` on `PHP v8.1.9`.
-    - Install `breeze`
+    - Install `breeze`.
+    - Install `Laravel Debugbar`
 
 ## License
 
