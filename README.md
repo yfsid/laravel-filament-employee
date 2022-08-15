@@ -16,6 +16,14 @@
     - Install `Laravel Debugbar`.
     - Install `Filament Admin v2`
 
+### Model, Migration and Relationship
+
+    - Country model, has many states, has many employees.
+    - State model, belongs to country, has many cities.
+    - City model, belongs to state, has many employees.
+    - Department model, has many employees.
+    - Employee model, belongs to country, state, city and department.
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
