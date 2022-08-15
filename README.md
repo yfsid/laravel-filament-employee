@@ -24,6 +24,10 @@
     - Department model, has many employees.
     - Employee model, belongs to country, state, city and department.
 
+### Filament Resources
+
+    - Country resource. CRUD, sortable, searchable and custom per page selections.
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
