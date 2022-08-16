@@ -22,6 +22,15 @@ class Employee extends Model
         'hired_date'
     ];
 
+
+    public function getFullNameAttribute()
+    {
+        $firstName = $this->attributes['first_name'];
+        $lastName = $this->attributes['last_name'];
+
+        return $firstName . " " . $lastName;
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);

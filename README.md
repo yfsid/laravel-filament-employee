@@ -19,7 +19,7 @@
 ### Model, Migration and Relationship
 
     - Country model, has many states, has many employees.
-    - State model, belongs to country, has many cities.
+    - State model, belongs to country, has many cities, employees.
     - City model, belongs to state, has many employees.
     - Department model, has many employees.
     - Employee model, belongs to country, state, city and department.
@@ -27,6 +27,13 @@
 ### Filament Resources
 
     - Country resource. CRUD, sortable, searchable and custom per page selections.
+    - State resource. CRUD, sortable, searchable and custom per page selections.
+    - City resource. CRUD, sortable, searchable and custom per page selections.
+    - Department resource. CRUD, sortable, searchable and custom per page selections.
+    - Employee resource. CRUD, sortable, searchable and custom per page selections.
+    - User resource. CRUD, sortable, searchable and custom per page selections.
+
+    - Dependant options country to states to cities.
 
 ## License
 
