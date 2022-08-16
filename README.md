@@ -7,8 +7,6 @@
 1. Set `timezone` using key in `.env` file.
 2. Set login attempt max `3 times` and wait for `5 minutes` to retry.
 
-## History
-
 ### Boilerplate
 
     - Install `Laravel v9.24.0` on `PHP v8.1.9`.
@@ -34,6 +32,11 @@
     - User resource. CRUD, sortable, searchable and custom per page selections.
 
     - Dependant options country to states to cities.
+
+### Filament Navigation
+
+    - Add Navigation Group.
+    - Add Icons to navigation.
 
 ## License
 
