@@ -6,6 +6,7 @@
 
 1. Set `timezone` using key in `.env` file.
 2. Set login attempt max `3 times` and wait for `5 minutes` to retry.
+3. Filament relation manager.
 
 ### Boilerplate
 
