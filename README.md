@@ -31,6 +31,7 @@
     - City resource. CRUD, sortable, searchable and custom per page selections.
     - Department resource. CRUD, sortable, searchable and custom per page selections.
     - Employee resource. CRUD, sortable, searchable and custom per page selections.
+    - User resource. CRUD, sortable, searchable and custom per page selections.
 
     - Dependant options country to states to cities.
 
