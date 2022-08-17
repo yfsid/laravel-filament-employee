@@ -6,7 +6,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::redirect('/', '/admin');
+Route::redirect('/', env('FILAMENT_PATH', 'admin'));
 
 Route::get('/dashboard', function () {
     return view('dashboard');
