@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Country;
+use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
@@ -35,10 +36,12 @@ class CountryResource extends Resource
                 Card::make()
                     ->schema([
                         TextInput::make('code')
+                            ->dehydrateStateUsing(fn ($state) => Str::upper($state))
                             ->required()
                             ->minLength(2)
                             ->maxLength(3),
                         TextInput::make('name')
+                            ->dehydrateStateUsing(fn ($state) => Str::title($state))
                             ->required()
                             ->minLength(4)
                             ->maxLength(255)
