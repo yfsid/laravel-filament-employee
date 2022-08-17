@@ -5,12 +5,14 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use App\Models\User;
 use Filament\Tables;
+use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Filament\Resources\Pages\Page;
 use Filament\Forms\Components\Card;
 use Illuminate\Support\Facades\Hash;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Validation\Rules\Password;
@@ -18,7 +20,6 @@ use Filament\Resources\Pages\CreateRecord;
 use App\Filament\Resources\UserResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\UserResource\RelationManagers;
-use Filament\Tables\Columns\TextColumn;
 
 class UserResource extends Resource
 {
@@ -36,10 +37,12 @@ class UserResource extends Resource
             ->schema([
                 Card::make()->schema([
                     TextInput::make('name')
+                        ->dehydrateStateUsing(fn ($state) => Str::title($state))
                         ->rules(['required', 'max:255'])
                         ->required()
                         ->maxLength(255),
                     TextInput::make('email')
+                        ->dehydrateStateUsing(fn ($state) => Str::lower($state))
                         ->email()
                         ->label('Email Address')
                         ->rules(['required', 'email', 'max:255'])

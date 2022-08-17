@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use App\Models\City;
 use Filament\Tables;
+use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
@@ -37,6 +38,7 @@ class CityResource extends Resource
                         ->relationship('state', 'name')
                         ->required(),
                     TextInput::make('name')
+                        ->dehydrateStateUsing(fn ($state) => Str::title($state))
                         ->required()
                         ->minLength(4)
                         ->maxLength(255)

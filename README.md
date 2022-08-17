@@ -34,7 +34,10 @@
 -   Employee resource. CRUD, sortable, searchable and custom per page selections.
 -   User resource. CRUD, sortable, searchable and custom per page selections.
 
--   Dependant options country to states to cities.
+    -   Dependant options country to states to cities.
+    -   Dehydrated options name, title to Str::title()
+    -   Dehydrated options code in country to Str::upper()
+    -   Dehydrated options email in employee to Str::lower()
 
 ### Filament Navigation
 

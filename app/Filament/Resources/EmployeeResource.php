@@ -8,6 +8,7 @@ use Filament\Tables;
 use App\Models\State;
 use App\Models\Country;
 use App\Models\Employee;
+use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
@@ -67,12 +68,24 @@ class EmployeeResource extends Resource
                         Select::make('department_id')
                             ->relationship('department', 'name')
                             ->required(),
-                        TextInput::make('first_name')->required()->maxLength(255),
-                        TextInput::make('last_name')->required()->maxLength(255),
-                        TextInput::make('address')->required()->maxLength(255),
-                        TextInput::make('zip_code')->required()->maxLength(5),
-                        DatePicker::make('birth_date')->required(),
-                        DatePicker::make('hired_date')->required()
+                        TextInput::make('first_name')
+                            ->dehydrateStateUsing(fn ($state) => Str::title($state))
+                            ->required()
+                            ->maxLength(255),
+                        TextInput::make('last_name')
+                            ->dehydrateStateUsing(fn ($state) => Str::title($state))
+                            ->required()
+                            ->maxLength(255),
+                        TextInput::make('address')
+                            ->required()
+                            ->maxLength(255),
+                        TextInput::make('zip_code')
+                            ->required()
+                            ->maxLength(5),
+                        DatePicker::make('birth_date')
+                            ->required(),
+                        DatePicker::make('hired_date')
+                            ->required()
                     ])
             ]);
     }

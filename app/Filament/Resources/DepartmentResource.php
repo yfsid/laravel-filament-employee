@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Department;
+use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
@@ -33,6 +34,7 @@ class DepartmentResource extends Resource
             ->schema([
                 Card::make()->schema([
                     TextInput::make('name')
+                        ->dehydrateStateUsing(fn ($state) => Str::title($state))
                         ->required()
                         ->minLength(2)
                         ->maxLength(255)
